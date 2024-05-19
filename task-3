@@ -1,0 +1,35 @@
+import random
+import string
+
+length = int(input("Enter the desired length of your password: "))
+print('''Choose characters set for password from these:
+      1. upper_case
+      2. lower_case
+      3. digits
+      4. special_characters
+      5. Exit''')
+
+generate_password = ""
+
+while True:
+    choice = int(input("Choose a number: "))  
+    if choice == 1:
+        generate_password += string.ascii_uppercase
+    elif choice == 2:
+        generate_password += string.ascii_lowercase
+    elif choice == 3:
+        generate_password += string.digits
+    elif choice == 4:
+        generate_password += string.punctuation
+    elif choice == 5:
+        break
+    else:
+        print("Enter a valid number")
+
+password = []
+
+for i in range(length):
+    randomchar = random.choice(generate_password)
+    password.append(randomchar)
+
+print("The random password is: " + "".join(password))
