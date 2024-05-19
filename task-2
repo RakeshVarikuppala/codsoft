@@ -1,0 +1,37 @@
+def addition(a,b):
+    return a+b
+
+def subtraction(a,b):
+    return a-b
+
+def multiplication(a,b):
+    return a*b
+
+def division(a,b):
+    if b == 0:
+        return "Error! Division by zero is not possible."
+    else:
+        return a / b
+
+print("Select operation:")
+print("a. addition")
+print("b. subtraction")
+print("c. multiply")
+print("d. division")
+
+def calculator_operations():
+    input_choice = input("Enter choice (a/b/c/d): ")
+    if input_choice in ('a', 'b', 'c', 'd'):
+        A = float(input("Enter first number: "))
+        B = float(input("Enter second number: "))
+        if input_choice == 'a':
+            print("Result:", addition(A,B))
+        elif input_choice == 'b':
+            print("Result:", subtraction(A,B))
+        elif input_choice == 'c':
+            print("Result:", multiplication(A,B))
+        elif input_choice == 'd':
+            print("Result:", division(A,B))
+    else:
+        print("Invalid input choice")
+final_result=calculator_operations()
